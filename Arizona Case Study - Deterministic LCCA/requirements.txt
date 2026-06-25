@@ -1,0 +1,32 @@
+# =====================================================================
+# Requirements for: Arizona_Case_Study_Deterministic_LCCA.ipynb
+# Network-level pavement LCCA (deterministic ADOT case study)
+#
+# Tested with Python 3.10 - 3.12.
+#
+# NOTE: numpy >= 2.0 is REQUIRED. The benefit (Area-Under-Curve)
+# calculations call numpy.trapezoid(), which was introduced in
+# NumPy 2.0 (it replaces the older numpy.trapz). Older NumPy will
+# raise AttributeError.
+# =====================================================================
+
+# --- Core scientific stack ---
+numpy>=2.0
+pandas>=2.0
+
+# --- Geospatial: reading the ADOT shapefiles ---
+geopandas>=1.0
+shapely>=2.0
+pyogrio>=0.7        # default vector I/O engine used by GeoPandas to read .shp
+# fiona>=1.9        # uncomment if you prefer Fiona instead of pyogrio
+
+# --- Parquet output (segment_results/*.parquet) ---
+pyarrow>=14.0
+
+# --- Plotting ---
+matplotlib>=3.7
+seaborn>=0.13
+
+# --- Notebook / interactive environment (for display() and running the .ipynb) ---
+ipython>=8.0
+jupyterlab>=4.0    # or: notebook>=7.0
