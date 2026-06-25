@@ -12,6 +12,7 @@ This repository contains the code used in the study:
 ## Data Availability
 **Arizona:** 2022 ADOT HPMS data is publicly available. The dataset used 
 in this study is archived at: [ZENODO LINK]
+
 **Minnesota:** Data was provided by MnDOT for research purposes only and 
 cannot be publicly shared.
 ## Funding
