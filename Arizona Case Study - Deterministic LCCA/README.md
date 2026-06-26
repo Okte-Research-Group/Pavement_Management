@@ -208,10 +208,10 @@ Running the notebook produces, in the working directory:
 ## Data & code availability
 
 - **Code:** archived on GitHub and Zenodo.
-  - GitHub: `<ADD GITHUB URL>`
-  - Zenodo (code DOI): `<ADD ZENODO DOI>`
+  - GitHub: `https://github.com/Okte-Research-Group/Pavement_Management/tree/main`
+  - Zenodo (code DOI): `10.5281/zenodo.20836630`
 - **Data:** the ADOT pavement network shapefiles are archived on Zenodo.
-  - Zenodo (data DOI): `<ADD ZENODO DATA DOI>`
+  - Zenodo (data DOI): `10.5281/zenodo.20836630`
 
 The input data are derived from the 2022 ADOT Highway Performance Monitoring
 System (HPMS) pavement inventory.
@@ -220,28 +220,27 @@ System (HPMS) pavement inventory.
 
 ## How to cite
 
-If you use this code or data, please cite both the manuscript and the archived
-release:
+If you use this code or data, please cite both the manuscript and the archived Zenodo dataset release. The active code repository is also available on GitHub.
 
 ```bibtex
-@article{UhdeYildirim_LCP_Arizona,
+@article{NetworkLCP,
   title   = {Impact of Integrating Use Stage into Network-Level Life-Cycle Planning},
-  author  = {Uhde Yildirim, Semiha and Mostatab, Seyedehzahra and Zeigham, Mohammad
-             and Okte, Egemen and Tseng, Ester and Al-Qadi, Imad L. and Ozer, Hasan},
+  author  = {Yildirim, Semiha Uhde and Mostatab, Seyedehzahra and Zeigham, Mohammad and Okte, Egemen and Tseng, Ester and Al-Qadi, Imad L. and Ozer, Hasan},
   year    = {<YEAR>},
   journal = {<JOURNAL / PROCEEDINGS>},
   doi     = {<ARTICLE DOI>}
 }
 
-@software{ArizonaLCCA_code,
-  title     = {Network-Level Pavement Life-Cycle Planning — Arizona Deterministic Case Study},
-  author    = {Uhde Yildirim, Semiha and Mostatab, Seyedehzahra and Zeigham, Mohammad
-               and Okte, Egemen and Tseng, Ester and Al-Qadi, Imad L. and Ozer, Hasan},
-  year      = {<YEAR>},
+@dataset{ArizonaDatasetLCP,
+  title     = {Impact of Integrating Use Stage into Network Level Life Cycle Planning},
+  author    = {Mostatab, Seyedehzahra and Yildirim, Semiha Uhde and Okte, Egemen},
+  year      = {2026},
   publisher = {Zenodo},
-  doi       = {<ZENODO CODE DOI>}
+  doi       = {10.5281/zenodo.20836630}
 }
 ```
+
+GitHub repository: `https://github.com/Okte-Research-Group/Pavement_Management/tree/main`
 
 ---
 
@@ -250,8 +249,8 @@ release:
 This work is part of the FHWA project *Cost-Efficient Network-Level Pavement
 Management Framework for Flexible Pavement Preservation and Maintenance*. The
 authors acknowledge the FHWA team led by Sivaneswaran Nadarajah, and the support
-of the Arizona and Minnesota Departments of Transportation.
+of the Arizona Departments of Transportation.
 
 ## License
 
-`<ADD LICENSE — e.g., MIT for code, CC BY 4.0 for data>`
+`This project is licensed under the MIT License.`
