@@ -208,10 +208,10 @@ Running the notebook produces, in the working directory:
 ## Data & code availability
 
 - **Code:** archived on GitHub and Zenodo.
-  - GitHub: `https://github.com/Okte-Research-Group/Pavement_Management/tree/main`
-  - Zenodo (code DOI): `10.5281/zenodo.20836630`
+  - GitHub:  [Pavement Management](https://github.com/Okte-Research-Group/Pavement_Management)
+  - Zenodo (code DOI): `10.5281/zenodo.20836630` [Zenodo Code & Data](https://zenodo.org/records/20836630)
 - **Data:** the ADOT pavement network shapefiles are archived on Zenodo.
-  - Zenodo (data DOI): `10.5281/zenodo.20836630`
+  - Zenodo (data DOI): `10.5281/zenodo.20836630` [Zenodo_Code & Data](https://zenodo.org/records/20836630)
 
 The input data are derived from the 2022 ADOT Highway Performance Monitoring
 System (HPMS) pavement inventory.
@@ -220,27 +220,35 @@ System (HPMS) pavement inventory.
 
 ## How to cite
 
-If you use this code or data, please cite both the manuscript and the archived Zenodo dataset release. The active code repository is also available on GitHub.
+If you use this code or data, please cite both the manuscript and the archived Zenodo dataset release. The active code repository is available on GitHub.
 
 ```bibtex
 @article{NetworkLCP,
   title   = {Impact of Integrating Use Stage into Network-Level Life-Cycle Planning},
-  author  = {Yildirim, Semiha Uhde and Mostatab, Seyedehzahra and Zeigham, Mohammad and Okte, Egemen and Tseng, Ester and Al-Qadi, Imad L. and Ozer, Hasan},
-  year    = {<YEAR>},
-  journal = {<JOURNAL / PROCEEDINGS>},
-  doi     = {<ARTICLE DOI>}
+  author  = {Yildirim, Semiha Uhde and
+             Mostatab, Seyedehzahra and
+             Zeigham, Mohammad and
+             Okte, Egemen and
+             Tseng, Ester and
+             Al-Qadi, Imad L. and
+             Ozer, Hasan},
+  year    = {TBD},
+  journal = {TBD},
+  doi     = {TBD}
 }
 
 @dataset{ArizonaDatasetLCP,
-  title     = {Impact of Integrating Use Stage into Network Level Life Cycle Planning},
-  author    = {Mostatab, Seyedehzahra and Yildirim, Semiha Uhde and Okte, Egemen},
+  title     = {Impact of Integrating Use Stage into Network-Level Life-Cycle Planning},
+  author    = {Mostatab, Seyedehzahra and
+               Yildirim, Semiha Uhde and
+               Okte, Egemen},
   year      = {2026},
   publisher = {Zenodo},
   doi       = {10.5281/zenodo.20836630}
 }
 ```
 
-GitHub repository: `https://github.com/Okte-Research-Group/Pavement_Management/tree/main`
+GitHub repository: [Pavement Management](https://github.com/Okte-Research-Group/Pavement_Management)
 
 ---
 
