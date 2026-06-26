@@ -1,4 +1,4 @@
-# Minnesota Case Study – User Cost and IRI Analysis
+# Minnesota Case Study
 
 This folder contains the code for the Minnesota case study presented in:
 
