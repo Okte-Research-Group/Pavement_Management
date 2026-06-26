@@ -91,9 +91,9 @@ See `Minnesota Case Study/README.md` for full details.
 
 ## Data & Code Availability
 
-- **Code (GitHub):** `<ADD GITHUB URL>`
-- **Code (Zenodo DOI):** `<ADD ZENODO CODE DOI>`
-- **Arizona data (Zenodo DOI):** `<ADD ZENODO DATA DOI>`
+- **Code (GitHub):** [Pavement Management](https://github.com/Okte-Research-Group/Pavement_Management)
+- **Code (Zenodo DOI):** `10.5281/zenodo.20836630` [Zenodo_Code & Data](https://zenodo.org/records/20836630)
+- **Arizona data (Zenodo DOI):** `10.5281/zenodo.20836630` [Zenodo_Code & Data](https://zenodo.org/records/20836630)
 - **Minnesota data:** Restricted — provided by MnDOT for research purposes only.
 
 ---
@@ -134,4 +134,4 @@ Transportation (ADOT) and the Minnesota Department of Transportation (MnDOT).
 
 ## License
 
-`<ADD LICENSE>`
+`Arizona case study material is licensed under the MIT License.`
