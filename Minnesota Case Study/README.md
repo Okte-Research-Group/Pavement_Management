@@ -167,6 +167,4 @@ pip install pandas numpy matplotlib seaborn openpyxl
 
 This work is part of the FHWA project *Cost-Efficient Network-Level Pavement
 Management Framework for Flexible Pavement Preservation and Maintenance*.
-The authors acknowledge the FHWA team led by Sivaneswaran Nadarajah, and the
-support of the Minnesota Department of Transportation (MnDOT).
 
