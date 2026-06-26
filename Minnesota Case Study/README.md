@@ -161,10 +161,6 @@ pip install pandas numpy matplotlib seaborn openpyxl
    ```
 4. Run all cells top to bottom.
 
-> **Note:** The notebook was originally developed in Google Colab. If running
-> locally, remove the `from google.colab import drive` and `drive.mount()`
-> lines from Section 1.
-
 ---
 
 ## Data & code availability
