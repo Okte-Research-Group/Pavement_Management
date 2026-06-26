@@ -163,28 +163,6 @@ pip install pandas numpy matplotlib seaborn openpyxl
 
 ---
 
-## Data & code availability
-
-- **Code:** archived on GitHub and Zenodo.
-  - GitHub: `<ADD GITHUB URL>`
-  - Zenodo (code DOI): `<ADD ZENODO DOI>`
-
----
-
-## How to cite
-
-```bibtex
-@article{UhdeYildirim_LCP_Minnesota,
-  title   = {Impact of Integrating Use Stage into Network-Level Life-Cycle Planning},
-  author  = {Uhde Yildirim, Semiha and Okte, Egemen and others},
-  year    = {<YEAR>},
-  journal = {<JOURNAL / PROCEEDINGS>},
-  doi     = {<ARTICLE DOI>}
-}
-```
-
----
-
 ## Acknowledgments
 
 This work is part of the FHWA project *Cost-Efficient Network-Level Pavement
@@ -192,6 +170,3 @@ Management Framework for Flexible Pavement Preservation and Maintenance*.
 The authors acknowledge the FHWA team led by Sivaneswaran Nadarajah, and the
 support of the Minnesota Department of Transportation (MnDOT).
 
-## License
-
-`<ADD LICENSE>`
