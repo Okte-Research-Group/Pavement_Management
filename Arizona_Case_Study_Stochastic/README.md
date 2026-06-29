@@ -13,7 +13,7 @@ The companion **deterministic** version of this case study is available at:
 
 ## What the model does
 
-A single Jupyter notebook, `FHWA_version.ipynb`, runs the full workflow end to end:
+A single Jupyter notebook, `Arizona_Case_Study_Stochastic.ipynb`, runs the full workflow end to end:
 
 1. **Load & preprocess** the 0.1-mile base-segment network and the merged 5-mile decision network, and build the base-to-merged mapping.
 2. **Compute structural inputs** — 20-year ESAL, pavement family, and the structural/seasonal variability factor.
