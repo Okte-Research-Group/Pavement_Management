@@ -1,0 +1,7 @@
+geopandas>=1.0.1
+joblib>=1.4.2
+matplotlib>=3.10.1
+numpy>=2.2.3
+pandas>=2.3.3
+pyogrio>=0.10.0
+seaborn>=0.13.2
