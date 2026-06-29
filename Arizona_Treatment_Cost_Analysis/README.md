@@ -135,7 +135,7 @@ The notebook uses a global random seed (`GLOBAL_SEED = 42`) for all bootstrap dr
 ## Running
 
 1. Place `ByJob.xlsx` and `PISearch_project_summary.xlsx` in the same folder as the notebook.
-2. Launch Jupyter and open `FHWA_Bid.ipynb`:
+2. Launch Jupyter and open `Arizona_Treatment_Cost_Analysis.ipynb`:
    ```bash
    jupyter lab
    ```
