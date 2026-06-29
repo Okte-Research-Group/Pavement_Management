@@ -48,7 +48,7 @@ The notebook resolves all paths relative to its own directory. After cloning, yo
 
 ```
 code-Segmentation-5miles/
-├── FHWA_version.ipynb
+├── Arizona_Case_Study_Stochastic.ipynb
 ├── paired_rr_ac_fr_correlation_matrix.csv   # treatment cost correlation matrix
 ├── requirements.txt
 ├── README.md
