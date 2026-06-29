@@ -83,7 +83,7 @@ constrained annual budget under three prioritization strategies:
 Agency costs and user costs (excess fuel from roughness) are reported for
 each strategy. The run is fully deterministic and exactly reproducible.
 
-Input data (ADOT shapefiles) are publicly available on Zenodo: `<ADD ZENODO DATA DOI>`
+Input data (ADOT shapefiles) are publicly available on Zenodo: `<10.5281/zenodo.20836630>`
 
 See `Arizona Case Study - Deterministic LCCA/README.md` for full details.
 
