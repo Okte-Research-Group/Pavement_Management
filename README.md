@@ -4,11 +4,18 @@ Code repository for the FHWA EAR project:
 
 > **"Cost-Efficient Network-Level Pavement Management Framework for Flexible Pavement Preservation and Maintenance"**
 
-This repository contains the analysis code supporting the manuscript:
+This repository contains the analysis code supporting two manuscripts:
 
 > **"Impact of Integrating Use Stage into Network-Level Life-Cycle Planning"**  
 > S. U. Yildirim, S. Mostatab, M. Zeigham, E. Okte (corresponding author),  
 > E. Tseng, I. L. Al-Qadi, and H. Ozer.  
+
+> **"Probabilistic Pavement Management Using Bid-Based Cost Distributions"**  
+> M. Zeigham, S. Mostatab, S. U. Yildirim, E. Okte (corresponding author),  
+> E. Tseng, H. Ozer, and I. Al-Qadi.  
+>
+> Supported by the Arizona stochastic case study, the treatment cost analysis, and the
+> post-processing notebook described below.
 
 ---
 ## Overview
@@ -48,6 +55,7 @@ Pavement_Management/
 │           └── merged_5miles_arizona/
 ├── Arizona_Case_Study_Stochastic/
 │   ├── Arizona_Case_Study_Stochastic.ipynb
+│   ├── Arizona_Case_Study_Stochastic_Post_Processing.ipynb
 │   ├── paired_rr_ac_fr_correlation_matrix.csv
 │   ├── requirements.txt
 │   ├── README.md
@@ -107,11 +115,28 @@ costs (agency and road-user).
 Treatment unit cost distributions (lognormal parameters) are derived from the
 companion Treatment Cost Analysis notebook described below. Remove & Replace costs
 can optionally be sampled from a correlated joint distribution, whose Spearman
-correlation matrix is also produced by that notebook.
+correlation matrix is also produced by that notebook. Performance-model uncertainty
+is applied as a calibrated, strictly positive lower-truncated-normal multiplier
+(mean 1, CoV = target CoV) rather than a plain normal shock, so pavement condition
+cannot spontaneously improve at high CoV. The notebook also includes a network
+condition reliability analysis (lane-mile weighted Good/Fair/Poor by functional
+category) and a State of Good Repair (SOGR) analysis reporting failure probability
+and mean SOGR by functional group and year.
 
 Input data (ADOT shapefiles) are publicly available on Zenodo: `10.5281/zenodo.20836630`
 
 See `Arizona_Case_Study_Stochastic/README.md` for full details.
+
+#### Post-Processing (Correlation, Reliability & Sensitivity Analysis)
+
+Consumes the CSV/Parquet output produced by the stochastic simulation notebook above
+and produces the manuscript-ready figures: strategy-comparison plots, CCDF curves,
+pairwise outperformance heatmaps, and multi-budget sensitivity curves, all converted
+to SI units (IRI in m/km, rutting in mm) with user cost inflation-adjusted to 2025
+dollars. Also includes the reliability and SOGR analysis in manuscript-ready form.
+
+Run `Arizona_Case_Study_Stochastic.ipynb` first to generate its outputs, then run
+`Arizona_Case_Study_Stochastic_Post_Processing.ipynb`.
 
 #### Treatment Cost Analysis
 

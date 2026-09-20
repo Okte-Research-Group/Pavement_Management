@@ -4,7 +4,14 @@ This repository contains the **stochastic**, network-level pavement management (
 
 > **Cost-Efficient Network-Level Pavement Management Framework for Flexible Pavement Preservation and Maintenance**
 
-The code reproduces the Arizona stochastic analysis: it loads the ADOT pavement network, projects pavement deterioration over a 10-year horizon under **Monte Carlo uncertainty**, applies the ADOT treatment decision tree, allocates a constrained annual budget under three prioritization strategies, and reports both **agency costs** and **road-user costs** (excess fuel consumption from pavement roughness), together with their probability distributions, for each strategy.
+The code reproduces the Arizona stochastic analysis: it loads the ADOT pavement network, projects pavement deterioration over a 10-year horizon under **Monte Carlo uncertainty**, applies the ADOT treatment decision tree, allocates a constrained annual budget under three prioritization strategies, and reports both **agency costs** and **road-user costs** (excess fuel consumption from pavement roughness), together with their probability distributions, for each strategy. It also reports network condition **reliability** (Good/Fair/Poor by functional category) and **State of Good Repair (SOGR)** failure probability by functional group.
+
+This case study, together with the companion Treatment Cost Analysis and the
+post-processing notebook below, supports the manuscript:
+
+> **"Probabilistic Pavement Management Using Bid-Based Cost Distributions"**  
+> M. Zeigham, S. Mostatab, S. U. Yildirim, E. Okte (corresponding author),  
+> E. Tseng, H. Ozer, and I. Al-Qadi.
 
 The companion **deterministic** version of this case study is available at:
 [Arizona Case Study — Deterministic](https://github.com/Okte-Research-Group/Pavement_Management/tree/main/Arizona%20Case%20Study%20-%20Deterministic%20LCCA)
@@ -13,17 +20,23 @@ The companion **deterministic** version of this case study is available at:
 
 ## What the model does
 
-A single Jupyter notebook, `Arizona_Case_Study_Stochastic.ipynb`, runs the full workflow end to end:
+The main notebook, `Arizona_Case_Study_Stochastic.ipynb`, runs the full simulation workflow end to end:
 
 1. **Load & preprocess** the 0.1-mile base-segment network and the merged 5-mile decision network, and build the base-to-merged mapping.
 2. **Compute structural inputs** — 20-year ESAL, pavement family, and the structural/seasonal variability factor.
-3. **Project performance** under uncertainty — IRI, rutting, and cracking deterioration models (ADOT coefficients) with multiplicative noise on the annual increment, sampled once per Monte Carlo realization.
+3. **Project performance** under uncertainty — IRI, rutting, and cracking deterioration models (ADOT coefficients) with a calibrated, strictly positive lower-truncated-normal multiplier applied to the annual increment, sampled once per Monte Carlo realization.
 4. **Sample treatment unit costs** once per Monte Carlo realization from a lognormal distribution — either independently or from a correlated joint distribution across treatment types.
 5. **Select treatments** with the ADOT decision tree (18 treatment types keyed to condition, functional class, AADT, rehab history, and scheduling state).
 6. **Allocate a constrained annual budget** under three strategies.
 7. **Estimate costs** — agency cost (sampled unit cost × treated lane-miles) and user cost (excess fuel consumption relative to a baseline IRI, by vehicle class).
 8. **Aggregate Monte Carlo results** — compute mean trajectories and percentile bands across all realizations.
 9. **Compare strategies** and export results to CSV.
+10. **Report reliability** — lane-mile weighted Good/Fair/Poor condition distribution by functional category, and State of Good Repair (SOGR) failure probability and mean SOGR by functional group and year (see [Reliability & SOGR analysis](#reliability--sogr-analysis) below).
+
+A companion notebook, `Arizona_Case_Study_Stochastic_Post_Processing.ipynb`, consumes this
+notebook's CSV/Parquet outputs to produce the manuscript-ready figures (strategy comparisons,
+CCDF curves, pairwise outperformance heatmaps, multi-budget and CoV sensitivity curves) in SI
+units. Run the main notebook first, then the post-processing notebook.
 
 ### Prioritization strategies
 
@@ -38,7 +51,31 @@ A single Jupyter notebook, `Arizona_Case_Study_Stochastic.ipynb`, runs the full 
 | Source | How it is modeled |
 |---|---|
 | **Treatment unit cost** | Sampled once per MC run from a lognormal distribution; optionally correlated across treatment types via a Cholesky decomposition of the empirical cost correlation matrix |
-| **Deterioration rate** | Multiplicative noise on the annual IRI, rutting, and cracking increment: `TP_{t+1} = TP_t + ΔTP × (1 + CoV × z)`, where `z` is drawn once per MC run per metric |
+| **Deterioration rate** | A calibrated multiplier applied to the annual IRI, rutting, and cracking increment: `TP_{t+1} = TP_t + ΔTP × multiplier`, where `multiplier` is drawn once per MC run per metric from a lower-truncated-normal distribution calibrated so that `mean(multiplier) = 1` and `CoV(multiplier) = COV_IRI`/`COV_RUTTING`/`COV_FATIGUE`. The lower truncation at 0 keeps the multiplier strictly positive (pavement condition cannot spontaneously improve absent a treatment), unlike a plain normal shock `(1 + CoV × z)`, which can go negative at high CoV |
+
+---
+
+## Reliability & SOGR analysis
+
+In addition to the Monte Carlo cost/condition simulation, the notebook includes two
+condition-reliability analyses, each self-contained (own imports, own data load):
+
+- **Network condition reliability** — lane-mile weighted Good/Fair/Poor condition distribution
+  by functional category (Freeways & Interstate, Other Arterials, Collectors & Local), using
+  ADOT's `IRI_Rating`, `Cracking_R`, and `Rutting_Ra` fields on the baseline 0.1-mile network.
+- **State of Good Repair (SOGR)** — probability of failure and mean SOGR by year, for four
+  functional groups, computed from the 150 Monte Carlo simulations already generated per
+  strategy at the `$440,000,000` budget level (`segment_results/strategy=.../budget=440000000/`):
+
+  | Group | Functional codes | Fail rule |
+  |---|---|---|
+  | Freeways & Interstate | 1, 3, 11, 12 | SOGR >= 2% |
+  | Other Arterials | 2, 6, 14, 16 | SOGR >= 7% |
+  | Collectors | 7, 8, 17, 18 | SOGR >= 7% |
+  | Rural (Local) | 9, 19 | Split by AADT: fails if High-AADT (>400) sub-SOGR >= 7% **OR** Low-AADT (<=400) sub-SOGR >= 15% |
+
+  The SOGR analysis requires an `AADT` column joined onto `segments_cov0.15.parquet`, added by
+  a one-time data-prep cell earlier in the notebook (run once; safe to skip on subsequent runs).
 
 ---
 
@@ -49,6 +86,7 @@ The notebook resolves all paths relative to its own directory. After cloning, yo
 ```
 code-Segmentation-5miles/
 ├── Arizona_Case_Study_Stochastic.ipynb
+├── Arizona_Case_Study_Stochastic_Post_Processing.ipynb
 ├── paired_rr_ac_fr_correlation_matrix.csv   # treatment cost correlation matrix
 ├── requirements.txt
 ├── README.md
@@ -172,8 +210,8 @@ Each CSV contains the columns: `simulation`, `year`, `weighted_avg_iri`, `weight
 ## Method notes
 
 - **Two resolutions.** Treatment selection, prioritization, and budget allocation happen at the merged 5-mile **decision** segment level, while deterioration models and treatment resets are applied at the 0.1-mile **reporting-unit** level and aggregated back with lane-mile weighting.
-- **Monte Carlo design.** Each realization draws one global performance-shock scalar per metric (`z_iri`, `z_rut`, `z_crack`) and one unit cost per treatment type. These are held fixed across all segments and years within a realization, so uncertainty reflects systematic network-wide variation rather than independent segment noise.
-- **Cost correlation.** When `USE_COST_CORRELATION = 1`, the R&R treatment costs are sampled jointly from a multivariate lognormal distribution whose correlation matrix is loaded from `paired_rr_ac_fr_correlation_matrix.csv`. Treatments not in the correlation matrix are sampled independently.
+- **Monte Carlo design.** Each realization draws one calibrated performance-uncertainty multiplier per metric (IRI, rutting, cracking; mean 1, CoV = `COV_IRI`/`COV_RUTTING`/`COV_FATIGUE`) and one unit cost per treatment type. These are held fixed across all segments and years within a realization, so uncertainty reflects systematic network-wide variation rather than independent segment noise.
+- **Cost correlation.** When `USE_COST_CORRELATION = 1`, the R&R treatment costs are sampled jointly from a multivariate lognormal distribution whose correlation matrix is loaded from `paired_rr_ac_fr_correlation_matrix.csv`; if that file is missing, the notebook raises an error rather than silently falling back to independent sampling. Treatments not in the correlation matrix are sampled independently. Set `USE_COST_CORRELATION = 0` to intentionally run with independent cost sampling.
 - **User cost** is the excess fuel consumption (energy above a baseline-IRI reference) monetized with 2024 West-Coast fuel prices, split across four vehicle classes (passenger, small/medium/large trucks). A mid-year IRI is used for each year's user-cost calculation.
 - **Budget allocation** uses a skip-and-continue greedy scan: projects are funded in priority order if they fit the remaining budget; an unaffordable project is skipped rather than blocking lower-priority projects that still fit.
 
