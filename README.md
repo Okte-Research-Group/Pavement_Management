@@ -14,9 +14,6 @@ This repository contains the analysis code supporting two manuscripts:
 > M. Zeigham, S. Mostatab, S. U. Yildirim, E. Okte (corresponding author),  
 > E. Tseng, H. Ozer, and I. Al-Qadi.  
 >
-> Supported by the Arizona stochastic case study, the treatment cost analysis, and the
-> post-processing notebook described below.
-
 ---
 ## Overview
 
