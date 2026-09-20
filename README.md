@@ -65,6 +65,9 @@ Pavement_Management/
 │           └── merged_5miles_arizona/
 ├── Arizona_Treatment_Cost_Analysis/
 │   ├── Arizona_Treatment_Cost_Analysis.ipynb
+│   ├── Arizona_Treatment_Cost_Analysis_SI.ipynb
+│   ├── ByJob_dummy.xlsx
+│   ├── PISearch_project_summary_dummy.xlsx
 │   ├── NHCCI_20251220.csv
 │   └── README.md
 └── Minnesota Case Study/
@@ -151,8 +154,17 @@ The resulting lognormal parameters (mean, CoV, μ_ln, σ_ln per treatment type) 
 the treatment cost correlation matrix serve directly as inputs to the stochastic
 network-level model above.
 
+Two notebooks contain the identical analysis in two unit systems:
+`Arizona_Treatment_Cost_Analysis.ipynb` (US customary: $/ton, $/lane-mile — used
+for the FHWA project report) and `Arizona_Treatment_Cost_Analysis_SI.ipynb` (SI:
+$/metric ton, $/lane-km — used for the "Probabilistic Pavement Management Using
+Bid-Based Cost Distributions" manuscript).
+
 Bid tab data were obtained from BidTabs.NET and cannot be shared publicly due to
 licensing. The NHCCI deflator file (`NHCCI_20251220.csv`) is included in the folder.
+Since the real bid tab data cannot be shared, `ByJob_dummy.xlsx` and
+`PISearch_project_summary_dummy.xlsx` are included as schematic templates showing
+the input file structure (column names/types only; all values are synthetic).
 
 See `Arizona_Treatment_Cost_Analysis/README.md` for full details.
 

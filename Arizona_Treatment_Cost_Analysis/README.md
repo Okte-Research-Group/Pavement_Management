@@ -7,6 +7,18 @@ This folder contains the analysis code for estimating **pavement treatment unit 
 
 The resulting cost distributions (lognormal parameters and correlation matrix) are used as inputs to the stochastic network-level model in [Arizona\_Case\_Study\_Stochastic](../Arizona_Case_Study_Stochastic/).
 
+### Two notebooks, two unit systems
+
+The identical analysis is provided in two notebooks that differ only in reported units:
+
+| Notebook | Units | Used for |
+|---|---|---|
+| `Arizona_Treatment_Cost_Analysis.ipynb` | US customary ($/ton, $/lane-mile) | FHWA project report |
+| `Arizona_Treatment_Cost_Analysis_SI.ipynb` | SI ($/metric ton, $/lane-km) | Manuscript: **"Probabilistic Pavement Management Using Bid-Based Cost Distributions"** (M. Zeigham, S. Mostatab, S. U. Yildirim, E. Okte (corresponding author), E. Tseng, H. Ozer, and I. Al-Qadi) |
+
+The SI notebook additionally reports a Kolmogorov–Smirnov (KS) goodness-of-fit
+statistic for each treatment's fitted lognormal distribution in the summary table.
+
 ---
 
 ## Overview
@@ -77,6 +89,16 @@ The notebook (`Arizona_Treatment_Cost_Analysis.ipynb`) runs end to end in sectio
 
 The bid tab data are obtained from **BidTabs.NET**, a commercial platform that aggregates highway construction bid records from state DOTs. The data cannot be shared publicly due to the platform's licensing terms. Researchers wishing to replicate the analysis should obtain a BidTabs.NET subscription or request the dataset from the corresponding author.
 
+Since the real files cannot be shared, this folder includes two **schematic template
+files** — `ByJob_dummy.xlsx` and `PISearch_project_summary_dummy.xlsx` — with the
+correct column names/types and a handful of synthetic rows, so the expected input
+structure is visible without any real bid data. Every value in these files
+(JobID, ContractorID/Name, Quantity, Amount, project descriptions, etc.) is
+fabricated; only the ADOT pay-item codes/descriptions/units and county/region
+values are real (these are public ADOT classification codes, not commercial data).
+Swap in the real `ByJob.xlsx` / `PISearch_project_summary.xlsx` to run the notebook
+for real.
+
 ### Input Files
 
 The notebook reads two Excel files:
@@ -134,8 +156,8 @@ The notebook uses a global random seed (`GLOBAL_SEED = 42`) for all bootstrap dr
 
 ## Running
 
-1. Place `ByJob.xlsx` and `PISearch_project_summary.xlsx` in the same folder as the notebook.
-2. Launch Jupyter and open `Arizona_Treatment_Cost_Analysis.ipynb`:
+1. Place `ByJob.xlsx` and `PISearch_project_summary.xlsx` in the same folder as the notebook. (No access to the real BidTabs.NET export? Rename `ByJob_dummy.xlsx` / `PISearch_project_summary_dummy.xlsx` to those two filenames to see the notebook run end to end on synthetic data.)
+2. Launch Jupyter and open `Arizona_Treatment_Cost_Analysis.ipynb` (US customary units) or `Arizona_Treatment_Cost_Analysis_SI.ipynb` (SI units):
    ```bash
    jupyter lab
    ```
@@ -159,7 +181,7 @@ Each section is self-contained except where noted (the Presentation summary and 
 
 - **Code:** available in this repository.
   - GitHub: [Pavement Management](https://github.com/Okte-Research-Group/Pavement_Management)
-- **Bid tab data:** obtained from BidTabs.NET and cannot be shared publicly due to licensing. Contact the corresponding author for access inquiries.
+- **Bid tab data:** obtained from BidTabs.NET and cannot be shared publicly due to licensing. Contact the corresponding author for access inquiries. Schematic templates (`ByJob_dummy.xlsx`, `PISearch_project_summary_dummy.xlsx`) with the correct column structure and synthetic values are included in this folder.
 - **NHCCI index:** publicly available from FHWA.
 
 ---
