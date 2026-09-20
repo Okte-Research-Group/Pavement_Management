@@ -4,6 +4,11 @@ This folder contains the analysis code for estimating **pavement treatment unit 
 
 > **"Cost-Efficient Network-Level Pavement Management Framework for Flexible Pavement Preservation and Maintenance"**
 
+This folder also supports the manuscript:
+
+> **"Probabilistic Pavement Management Using Bid-Based Cost Distributions"**  
+> M. Zeigham, S. Mostatab, S. U. Yildirim, E. Okte (corresponding author),  
+> E. Tseng, H. Ozer, and I. Al-Qadi.
 
 The resulting cost distributions (lognormal parameters and correlation matrix) are used as inputs to the stochastic network-level model in [Arizona\_Case\_Study\_Stochastic](../Arizona_Case_Study_Stochastic/).
 
@@ -13,8 +18,8 @@ The identical analysis is provided in two notebooks that differ only in reported
 
 | Notebook | Units | Used for |
 |---|---|---|
-| `Arizona_Treatment_Cost_Analysis.ipynb` | US customary ($/ton, $/lane-mile) | FHWA project report |
-| `Arizona_Treatment_Cost_Analysis_SI.ipynb` | SI ($/metric ton, $/lane-km) | Manuscript: **"Probabilistic Pavement Management Using Bid-Based Cost Distributions"** (M. Zeigham, S. Mostatab, S. U. Yildirim, E. Okte (corresponding author), E. Tseng, H. Ozer, and I. Al-Qadi) |
+| `Arizona_Treatment_Cost_Analysis.ipynb` | US customary ($/ton, $/lane-mile) | Report |
+| `Arizona_Treatment_Cost_Analysis_SI.ipynb` | SI ($/metric ton, $/lane-km) | Manuscript |
 
 The SI notebook additionally reports a Kolmogorov–Smirnov (KS) goodness-of-fit
 statistic for each treatment's fitted lognormal distribution in the summary table.
