@@ -184,10 +184,43 @@ Each section is self-contained except where noted (the Presentation summary and 
 
 ## Data & Code Availability
 
-- **Code:** available in this repository.
+- **Code:** available in this repository, and archived on GitHub and Zenodo.
   - GitHub: [Pavement Management](https://github.com/Okte-Research-Group/Pavement_Management)
+  - Zenodo (code & data DOI): `10.5281/zenodo.22864634` — [Probabilistic Pavement Management Using Bid-Based Cost Distributions](https://doi.org/10.5281/zenodo.22864634)
 - **Bid tab data:** obtained from BidTabs.NET and cannot be shared publicly due to licensing. Contact the corresponding author for access inquiries. Schematic templates (`ByJob_dummy.xlsx`, `PISearch_project_summary_dummy.xlsx`) with the correct column structure and synthetic values are included in this folder.
 - **NHCCI index:** publicly available from FHWA.
+
+---
+
+## How to cite
+
+If you use this code or the fitted cost distributions, please cite the manuscript and the archived Zenodo dataset release.
+
+```bibtex
+@article{ProbabilisticPMS,
+  title   = {Probabilistic Pavement Management Using Bid-Based Cost Distributions},
+  author  = {Zeigham, Mohammad and
+             Mostatab, Seyedehzahra and
+             Yildirim, Semiha Uhde and
+             Okte, Egemen and
+             Tseng, Ester and
+             Ozer, Hasan and
+             Al-Qadi, Imad},
+  year    = {TBD},
+  journal = {TBD},
+  doi     = {TBD}
+}
+
+@dataset{ArizonaDatasetProbabilistic,
+  title     = {Probabilistic Pavement Management Using Bid-Based Cost Distributions},
+  author    = {Zeigham, Mohammad and
+               Mostatab, Seyedehzahra and
+               Okte, Egemen},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22864634}
+}
+```
 
 ---
 

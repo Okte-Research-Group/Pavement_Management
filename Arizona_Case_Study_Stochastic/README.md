@@ -221,10 +221,44 @@ Each CSV contains the columns: `simulation`, `year`, `weighted_avg_iri`, `weight
 
 - **Code:** archived on GitHub and Zenodo.
   - GitHub: [Pavement Management](https://github.com/Okte-Research-Group/Pavement_Management)
-- **Data:** the ADOT pavement network shapefiles are archived on Zenodo.
-  - Zenodo (data DOI): `10.5281/zenodo.20836630` — [Zenodo Code & Data](https://zenodo.org/records/20836630)
+  - Zenodo (code & data DOI): `10.5281/zenodo.22864634` — [Probabilistic Pavement Management Using Bid-Based Cost Distributions](https://doi.org/10.5281/zenodo.22864634)
+- **Data:** the ADOT pavement network shapefiles and treatment cost distributions used by this notebook are archived in the Zenodo record above.
 
 The input data are derived from the 2022 ADOT Highway Performance Monitoring System (HPMS) pavement inventory.
+
+---
+
+## How to cite
+
+If you use this code or data, please cite the manuscript and the archived Zenodo dataset release.
+
+```bibtex
+@article{ProbabilisticPMS,
+  title   = {Probabilistic Pavement Management Using Bid-Based Cost Distributions},
+  author  = {Zeigham, Mohammad and
+             Mostatab, Seyedehzahra and
+             Yildirim, Semiha Uhde and
+             Okte, Egemen and
+             Tseng, Ester and
+             Ozer, Hasan and
+             Al-Qadi, Imad},
+  year    = {TBD},
+  journal = {TBD},
+  doi     = {TBD}
+}
+
+@dataset{ArizonaDatasetProbabilistic,
+  title     = {Probabilistic Pavement Management Using Bid-Based Cost Distributions},
+  author    = {Zeigham, Mohammad and
+               Mostatab, Seyedehzahra and
+               Okte, Egemen},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22864634}
+}
+```
+
+GitHub repository: [Pavement Management](https://github.com/Okte-Research-Group/Pavement_Management)
 
 ---
 

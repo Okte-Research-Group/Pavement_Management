@@ -123,7 +123,9 @@ condition reliability analysis (lane-mile weighted Good/Fair/Poor by functional
 category) and a State of Good Repair (SOGR) analysis reporting failure probability
 and mean SOGR by functional group and year.
 
-Input data (ADOT shapefiles) are publicly available on Zenodo: `10.5281/zenodo.20836630`
+Input data (ADOT shapefiles) are publicly available on Zenodo. This case study's
+code, data, and outputs are archived as part of the "Probabilistic Pavement
+Management Using Bid-Based Cost Distributions" record: `10.5281/zenodo.22864634`
 
 See `Arizona_Case_Study_Stochastic/README.md` for full details.
 
@@ -163,6 +165,10 @@ Since the real bid tab data cannot be shared, `ByJob_dummy.xlsx` and
 `PISearch_project_summary_dummy.xlsx` are included as schematic templates showing
 the input file structure (column names/types only; all values are synthetic).
 
+This notebook's code and fitted cost distributions are archived as part of the
+"Probabilistic Pavement Management Using Bid-Based Cost Distributions" Zenodo
+record: `10.5281/zenodo.22864634`
+
 See `Arizona_Treatment_Cost_Analysis/README.md` for full details.
 
 ---
@@ -191,8 +197,8 @@ See `Minnesota Case Study/README.md` for full details.
 ## Data & Code Availability
 
 - **Code (GitHub):** [Pavement Management](https://github.com/Okte-Research-Group/Pavement_Management)
-- **Code (Zenodo DOI):** `10.5281/zenodo.20836630` [Zenodo_Code & Data](https://zenodo.org/records/20836630)
-- **Arizona data (Zenodo DOI):** `10.5281/zenodo.20836630` [Zenodo_Code & Data](https://zenodo.org/records/20836630)
+- **Deterministic case study — code & data (Zenodo DOI):** `10.5281/zenodo.20836630` [Zenodo Code & Data](https://zenodo.org/records/20836630)
+- **Stochastic case study & treatment cost analysis — code & data (Zenodo DOI):** `10.5281/zenodo.22864634` [Probabilistic Pavement Management Using Bid-Based Cost Distributions](https://doi.org/10.5281/zenodo.22864634)
 - **Minnesota data:** Restricted — provided by MnDOT for research purposes only.
 - **Bid tab data (Arizona treatment costs):** Restricted — obtained from BidTabs.NET. Contact the corresponding author for access inquiries.
 - **NHCCI construction cost index:** Publicly available from FHWA (included as `Arizona_Treatment_Cost_Analysis/NHCCI_20251220.csv`).
@@ -230,7 +236,58 @@ pip install pandas numpy matplotlib seaborn openpyxl
 
 ## How to Cite
 
-If you use this code or data, please cite both the manuscript and the archived release
+If you use this code or data, please cite the relevant manuscript and its archived
+Zenodo release.
+
+```bibtex
+@article{NetworkLCP,
+  title   = {Impact of Integrating Use Stage into Network-Level Life-Cycle Planning},
+  author  = {Yildirim, Semiha Uhde and
+             Mostatab, Seyedehzahra and
+             Zeigham, Mohammad and
+             Okte, Egemen and
+             Tseng, Ester and
+             Al-Qadi, Imad L. and
+             Ozer, Hasan},
+  year    = {TBD},
+  journal = {TBD},
+  doi     = {TBD}
+}
+
+@dataset{ArizonaDatasetLCP,
+  title     = {Impact of Integrating Use Stage into Network-Level Life-Cycle Planning},
+  author    = {Mostatab, Seyedehzahra and
+               Yildirim, Semiha Uhde and
+               Okte, Egemen},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.20836630}
+}
+
+@article{ProbabilisticPMS,
+  title   = {Probabilistic Pavement Management Using Bid-Based Cost Distributions},
+  author  = {Zeigham, Mohammad and
+             Mostatab, Seyedehzahra and
+             Yildirim, Semiha Uhde and
+             Okte, Egemen and
+             Tseng, Ester and
+             Ozer, Hasan and
+             Al-Qadi, Imad},
+  year    = {TBD},
+  journal = {TBD},
+  doi     = {TBD}
+}
+
+@dataset{ArizonaDatasetProbabilistic,
+  title     = {Probabilistic Pavement Management Using Bid-Based Cost Distributions},
+  author    = {Zeigham, Mohammad and
+               Mostatab, Seyedehzahra and
+               Okte, Egemen},
+  year      = {2026},
+  publisher = {Zenodo},
+  doi       = {10.5281/zenodo.22864634}
+}
+```
 
 ---
 
