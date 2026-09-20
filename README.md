@@ -201,7 +201,6 @@ See `Minnesota Case Study/README.md` for full details.
 - **Stochastic case study & treatment cost analysis — code & data (Zenodo DOI):** `10.5281/zenodo.22864634` [Probabilistic Pavement Management Using Bid-Based Cost Distributions](https://doi.org/10.5281/zenodo.22864634)
 - **Minnesota data:** Restricted — provided by MnDOT for research purposes only.
 - **Bid tab data (Arizona treatment costs):** Restricted — obtained from BidTabs.NET. Contact the corresponding author for access inquiries.
-- **NHCCI construction cost index:** Publicly available from FHWA (included as `Arizona_Treatment_Cost_Analysis/NHCCI_20251220.csv`).
 
 ---
 
